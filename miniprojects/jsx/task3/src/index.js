@@ -16,6 +16,7 @@ const renderSeconds = (time) => {
 
   const element = (
     <div className="seconds" style={styles}>
+      Now is
       {seconds}
     </div>
   );
