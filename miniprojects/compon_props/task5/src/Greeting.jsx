@@ -9,7 +9,7 @@ const Greeting = (props) => {
     <div className="greeting">
       {`My name is ${props.user.firstName} ${
         props.user.lastName
-      }. I'm ${formatYear(props.user.birthDate)} years old</div>`}
+      }. I'm ${formatYear(props.user.birthDate)} years old`}
     </div>
   );
 };
