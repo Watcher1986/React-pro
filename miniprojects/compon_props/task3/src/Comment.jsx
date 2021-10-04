@@ -3,8 +3,7 @@ import './comment.scss';
 import moment from 'moment';
 import UserInfo from './UserInfo';
 
-const formatDate = (date) =>
-  Math.floor(moment(new Date()).diff(new Date(date), 'months', true) % 12);
+const formatDate = (date) => moment(date).format('DD MMM YYYY');
 
 function Comment(props) {
   return (

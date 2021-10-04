@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 const formatYear = (date) =>
-  Math.floor(moment(new Date()).diff(new Date(date), 'months', true) % 12);
+  Math.floor(moment(new Date()).diff(new Date(date), 'months', true) / 12);
 
 const Greeting = (props) => {
   return (
