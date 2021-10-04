@@ -5,10 +5,11 @@ import Greeting from './Greeting';
 
 const rootElement = document.querySelector('#root');
 
-const userInfo = {
-  firstName: 'John',
-  lastName: 'Doe',
-  birthDate: '2004-07-17T11:13:17.777Z',
-};
-
-ReactDOM.render(<Greeting user={userInfo} />, rootElement);
+ReactDOM.render(
+  <Greeting
+    firstName="John"
+    lastName="Doe"
+    birthDate="2004-07-17T11:13:17.777Z"
+  />,
+  rootElement
+);
