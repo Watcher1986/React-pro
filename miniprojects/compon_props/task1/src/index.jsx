@@ -6,6 +6,4 @@ import Search from './Search';
 
 const rootElement = document.querySelector('#root');
 
-const userName = 'Tom';
-
-ReactDOM.render(<Search name={userName} />, rootElement);
+ReactDOM.render(<Search name={'Tom'} />, rootElement);
