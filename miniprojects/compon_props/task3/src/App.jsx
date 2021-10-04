@@ -11,7 +11,7 @@ const App = () => {
     <Comment
       user={userInfo}
       text="Good job!"
-      date={new Date('2021-01-01T11:32:19.777Z')}
+      date={new Date('2019-10-29T11:32:19.777Z')}
     />
   );
 };
