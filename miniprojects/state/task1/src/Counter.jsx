@@ -6,7 +6,6 @@ class Counter extends Component {
     super(props);
 
     this.state = {
-      name: 'Tom',
       counter: props.start,
     };
 
@@ -18,7 +17,6 @@ class Counter extends Component {
   }
 
   render() {
-    console.log(this.state);
     return <div className="counter">{this.state.counter}</div>;
   }
 }
