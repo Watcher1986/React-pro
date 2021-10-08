@@ -4,41 +4,42 @@ class ColorPicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hoverBtnColor: this.state.hoverBtnColor,
+      btnColorText: '',
     };
-    this.onHoverBtn = this.onHoverBtn.bind(this);
-  }
 
-  onHoverBtn = text => {
+    // this.onHovBtn = this.onHovBtn.bind(this);
+    // this.onLeaveBtn = this.onLeaveBtn.bind(this);
+  }
+  onHovBtn = text => {
     this.setState({
-      hoverBtnColor: text,
+      btnColorText: text,
     });
   };
 
   onLeaveBtn = () => {
     this.setState({
-      hoverBtnColor: '',
+      btnColorText: '',
     });
   };
 
   render() {
     return (
       <div>
-        <div className="picker__title">{this.state.hoverBtnColor}</div>
+        <div className="picker__title">{this.state.btnColorText}</div>
         <div>
           <button
             className="picker__button picker__button_coral"
-            onMouseEnter={this.onHoverBtn('Coral')}
+            onMouseEnter={() => this.onHovBtn('Coral')}
             onMouseLeave={this.onLeaveBtn}
           ></button>
           <button
             className="picker__button picker__button_aqua"
-            onMouseEnter={this.onHoverBtn('Aqua')}
+            onMouseEnter={() => this.onHovBtn('Aqua')}
             onMouseLeave={this.onLeaveBtn}
           ></button>
           <button
             className="picker__button picker__button_bisque"
-            onMouseEnter={this.onHoverBtn('Bisque')}
+            onMouseEnter={() => this.onHovBtn('Bisque')}
             onMouseLeave={this.onLeaveBtn}
           ></button>
         </div>
