@@ -4,11 +4,11 @@ import Online from './Online';
 
 class Status extends Component {
   state = {
-    isOnline: false,
+    isOnline: [false, true],
   };
 
   render() {
-    return <div className="status">{this.state.isOnline ? <Online /> : <Offline />}</div>;
+    return <div className="status">{this.state.isOnline[1] ? <Online /> : <Offline />}</div>;
   }
 }
 
