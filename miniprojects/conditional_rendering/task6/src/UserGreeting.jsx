@@ -14,7 +14,7 @@ const Emoji = props => (
 const UserGreeting = () => {
   return (
     <h1>
-      Hello, User <Emoji symbol="😎" />
+      Hello, user <Emoji symbol="😎" />
     </h1>
   );
 };

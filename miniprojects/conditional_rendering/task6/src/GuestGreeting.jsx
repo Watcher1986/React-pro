@@ -14,7 +14,7 @@ const Emoji = props => (
 const GuestGreeting = () => {
   return (
     <h1>
-      Hi Stranger. Please login <Emoji symbol="🚀" />
+      Hi stranger. Please login <Emoji symbol="🚀" />
     </h1>
   );
 };
