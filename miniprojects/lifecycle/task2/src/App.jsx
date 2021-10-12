@@ -17,19 +17,22 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.toggle}>Toggle</button>
-        <div>{this.state.visible && <Clock />}</div>
-      </div>
+      <>
+        <button className="btn" onClick={this.toggle}>
+          Toggle
+        </button>
+        <>
+          {this.state.visible && (
+            <>
+              <Clock location={'London'} offset={1} />
+              <Clock location={'Kyiv'} offset={3} />
+              <Clock location={'New York'} offset={-4} />
+            </>
+          )}
+        </>
+      </>
     );
   }
-  // return (
-  //   <>
-  //     <Clock location="New York" offset={5} />
-  //     {/* <Clock location="Kyiv" offset={2} />
-  //     <Clock location="New York" offset={0} /> */}
-  //   </>
-  // );
 }
 
 export default App;
