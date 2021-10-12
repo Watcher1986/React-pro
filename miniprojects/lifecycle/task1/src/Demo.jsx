@@ -24,6 +24,7 @@ class Demo extends Component {
   };
 
   render() {
+    console.log('componentDidMount: API calls, subscriptions');
     return (
       <div>
         <div>

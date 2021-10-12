@@ -7,7 +7,7 @@ class Life extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount: API calls,subscriptions');
+    console.log('componentDidMount: API calls, subscriptions');
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -28,7 +28,12 @@ class Life extends Component {
 
   render() {
     console.log('return React element to build DOM');
-    return <div className="number">{this.props.number}</div>;
+    return (
+      <>
+        <div>Some text</div>
+        <div className="number">{this.props.number}</div>
+      </>
+    );
   }
 }
 
