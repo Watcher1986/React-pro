@@ -18,7 +18,7 @@ class Life extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // console.log(prevProps, prevState);
+    console.log(prevProps, prevState);
     console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
   }
 
@@ -28,6 +28,7 @@ class Life extends Component {
 
   render() {
     console.log('return React element to build DOM');
+    console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
     return (
       <>
         <div>Some text</div>
