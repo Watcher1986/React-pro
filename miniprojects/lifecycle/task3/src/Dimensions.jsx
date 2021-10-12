@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 class Dimensions extends Component {
-  state = {
-    width: null,
-    height: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      width: null,
+      height: null,
+    };
+  }
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
