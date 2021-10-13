@@ -17,18 +17,18 @@ class UserForm extends Component {
     const val = type === 'checkbox' ? checked : value;
 
     this.setState({
-      [name]: val.toUpperCase(),
+      [name]: val,
     });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log(this.state);
-  };
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   console.log(this.state);
+  // };
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.handleSubmit}>
+      <form className="login-form" onSubmit={this.props.createUser}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
