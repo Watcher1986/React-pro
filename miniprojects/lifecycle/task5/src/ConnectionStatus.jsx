@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 class ConnectionStatus extends Component {
   constructor(props) {
@@ -11,17 +10,22 @@ class ConnectionStatus extends Component {
 
   componentDidMount() {
     window.addEventListener('online', this.onOnline);
-    window.addEventListener('offline', this.onOnline);
+    window.addEventListener('offline', this.onOffline);
   }
 
   componentWillUnmount() {
     window.removeEventListener('online', this.onOnline);
-    window.removeEventListener('offline', this.onOnline);
+    window.removeEventListener('offline', this.onOffline);
   }
 
   onOnline = () => {
-    const intStatus = navigator.onLine ? 'online' : 'offline';
-    this.setStatus(intStatus);
+    // const intStatus = navigator.onLine ? 'online' : 'offline';
+    this.setStatus('online');
+  };
+
+  onOffline = () => {
+    // const intStatus = navigator.onLine ? 'online' : 'offline';
+    this.setStatus('offline');
   };
 
   setStatus = status => {
