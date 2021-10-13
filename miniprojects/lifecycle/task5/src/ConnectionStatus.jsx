@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 class ConnectionStatus extends Component {
   constructor(props) {
@@ -30,11 +31,8 @@ class ConnectionStatus extends Component {
   };
 
   render() {
-    return this.state.connectionStatus === 'online' ? (
-      <div className="status">{this.state.connectionStatus}</div>
-    ) : (
-      <div className="status status_offline">{this.state.connectionStatus}</div>
-    );
+    const className = this.state.connectionStatus === 'online' ? 'status' : 'status status_offline';
+    return <div className={className}>{this.state.connectionStatus}</div>;
   }
 }
 
