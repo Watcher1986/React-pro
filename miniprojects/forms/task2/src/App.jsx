@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import UserForm from './UserForm';
 
 const App = () => {
-  const createUser = e => {
-    e.preventDefault();
-    console.log(e);
+  const createUser = data => {
+    // e.persist();
+    // e.preventDefault();
+    console.log(data);
   };
 
-  return <UserForm onSubmit={() => createUser} />;
+  return <UserForm onSubmit={createUser} />;
 };
 
 export default App;
