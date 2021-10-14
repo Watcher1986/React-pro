@@ -21,14 +21,12 @@ class UserForm extends Component {
     });
   };
 
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   console.log(this.state);
-  // };
-
   render() {
+<<<<<<< HEAD
     // const createUser = this.props.createUser;
     // const createUser = this.props.onSubmit(this.state); this.props.onSubmit(this.state)
+=======
+>>>>>>> 419efe59d8ab50900f34f65c4817d4d16136b1da
     return (
       <form className="login-form" onSubmit={() => this.props.onSubmit(this.state)}>
         <h1 className="form-title">Profile</h1>
