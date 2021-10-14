@@ -3,8 +3,6 @@ import UserForm from './UserForm';
 
 const App = () => {
   const createUser = data => {
-    // e.persist();
-    // e.preventDefault();
     console.log(data);
   };
 
