@@ -4,10 +4,16 @@ import UserForm from './UserForm';
 const App = () => {
   const createUser = data => {
     // e.preventDefault();
-    console.log(data);
+    const formData = [...new FormData(data)].reduce(
+      (acc, [name, value]) => ({ ...acc, [name]: value }),
+      {},
+    );
+    // e.preventDefault();
+
+    console.log(formData);
   };
 
-  return <UserForm onSubmit={createUser} />;
+  return <UserForm onSubmit={() => createUser()} />;
 };
 
 export default App;
