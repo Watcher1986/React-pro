@@ -4,15 +4,15 @@ class UserForm extends Component {
   constructor(props) {
     super(props);
   }
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   const formData = [...new FormData(this.formRef)].reduce(
-  //     (acc, [name, value]) => ({ ...acc, [name]: value }),
-  //     {},
-  //   );
+  handleSubmit = e => {
+    e.preventDefault();
+    const formData = [...new FormData(this.formRef)].reduce(
+      (acc, [name, value]) => ({ ...acc, [name]: value }),
+      {},
+    );
 
-  //   console.log(formData);
-  // };
+    console.log(formData);
+  };
   // componentDidUpdate() {
   //   formData = [...new FormData(this.formRef)].reduce(
   //     (acc, [name, value]) => ({ ...acc, [name]: value }),
@@ -36,11 +36,7 @@ class UserForm extends Component {
     //preventDefault();
     // console.log(formData);
     return (
-      <form
-        ref={this.setRef}
-        className="login-form"
-        onSubmit={() => this.props.onSubmit(this.formRef)}
-      >
+      <form ref={this.setRef} className="login-form" onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
