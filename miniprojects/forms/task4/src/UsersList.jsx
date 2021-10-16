@@ -18,14 +18,14 @@ class UsersList extends Component {
   }
 
   render() {
-    let includesCount = null;
+    let nameIncludesCount = null;
     const inputText = this.state.filterText;
     let usersList = {};
     if (inputText !== '') {
       usersList = this.state.users.filter(user =>
         inputText.toLowerCase().includes(user.name.toLowerCase()),
       );
-      includesCount = usersList.length;
+      nameIncludesCount = usersList.length;
     } else {
       usersList = this.state.users;
     }
@@ -34,7 +34,7 @@ class UsersList extends Component {
         <Filter
           onChange={this.onChangeFilterText.bind(this)}
           filterText={this.state.filterText}
-          count={includesCount || 0}
+          count={nameIncludesCount || 0}
         />
         <ul className="users">
           {usersList.map(user => (
