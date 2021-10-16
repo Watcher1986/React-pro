@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import UserForm from './UserForm';
 
-const App = () => {
-  const createUser = data => {
-    // e.preventDefault();
+class App extends Component {
+  createUser = data => {
     const formData = [...new FormData(data)].reduce(
       (acc, [name, value]) => ({ ...acc, [name]: value }),
       {},
     );
-    // e.preventDefault();
 
     console.log(formData);
   };
-
-  return <UserForm onSubmit={() => createUser()} />;
-};
+  render() {
+    return <UserForm onSubmit={this.createUser} />;
+  }
+}
 
 export default App;
