@@ -3,12 +3,6 @@ import UserForm from './UserForm';
 
 class App extends Component {
   createUser = userData => {
-    //e.preventDefault();
-    // const formData = [...new FormData(data)].reduce(
-    //   (acc, [name, value]) => ({ ...acc, [name]: value }),
-    //   {},
-    // );
-
     console.log(userData);
   };
   render() {

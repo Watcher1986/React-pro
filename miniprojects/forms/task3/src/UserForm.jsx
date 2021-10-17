@@ -5,11 +5,6 @@ class UserForm extends Component {
     super(props);
   }
 
-  // formData = [...new FormData(this.formRef)].reduce(
-  //   (acc, [name, value]) => ({ ...acc, [name]: value }),
-  //   {},
-  // );
-
   setRef = node => {
     this.formRef = node;
   };
@@ -24,10 +19,6 @@ class UserForm extends Component {
   };
 
   render() {
-    // const formData = [...new FormData(this.formRef)].reduce(
-    //   (acc, [name, value]) => ({ ...acc, [name]: value }),
-    //   {},
-    // );
     return (
       <form ref={this.setRef} className="login-form" onSubmit={this.submitHandler}>
         <h1 className="form-title">Profile</h1>
