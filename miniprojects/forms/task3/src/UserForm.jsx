@@ -5,16 +5,29 @@ class UserForm extends Component {
     super(props);
   }
 
-  submitHandler = e => {
-    e.preventDefault();
-    this.props.onSubmit(this.formRef);
-  };
+  // formData = [...new FormData(this.formRef)].reduce(
+  //   (acc, [name, value]) => ({ ...acc, [name]: value }),
+  //   {},
+  // );
 
   setRef = node => {
     this.formRef = node;
   };
 
+  submitHandler = e => {
+    e.preventDefault();
+    const formData = [...new FormData(this.formRef)].reduce(
+      (acc, [name, value]) => ({ ...acc, [name]: value }),
+      {},
+    );
+    this.props.onSubmit(formData);
+  };
+
   render() {
+    // const formData = [...new FormData(this.formRef)].reduce(
+    //   (acc, [name, value]) => ({ ...acc, [name]: value }),
+    //   {},
+    // );
     return (
       <form ref={this.setRef} className="login-form" onSubmit={this.submitHandler}>
         <h1 className="form-title">Profile</h1>
@@ -37,8 +50,8 @@ class UserForm extends Component {
           <select name="occupation" className="form-input">
             <option value="london">London</option>
             <option value="new-york">New York</option>
-            <option value="coconut">Sidney</option>
-            <option value="mango">Berlin</option>
+            <option value="sidney">Sidney</option>
+            <option value="berlin">Berlin</option>
           </select>
         </div>
         <div className="form-control">

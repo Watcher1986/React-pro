@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import UserForm from './UserForm';
 
 class App extends Component {
-  createUser(data) {
-    const formData = [...new FormData(data)].reduce(
-      (acc, [name, value]) => ({ ...acc, [name]: value }),
-      {},
-    );
+  createUser = userData => {
+    //e.preventDefault();
+    // const formData = [...new FormData(data)].reduce(
+    //   (acc, [name, value]) => ({ ...acc, [name]: value }),
+    //   {},
+    // );
 
-    console.log(formData);
-  }
+    console.log(userData);
+  };
   render() {
-    return <UserForm onSubmit={this.createUser.bind(this)} />;
+    return <UserForm onSubmit={this.createUser} />;
   }
 }
 
