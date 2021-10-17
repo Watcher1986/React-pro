@@ -7,37 +7,41 @@ class UsersList extends Component {
     super(props);
     this.state = {
       users: this.props.users,
-      filterText: '',
+      // filterText: '',
+      nameIncludesCount: null,
     };
   }
 
-  onChangeFilterText(newFilterText) {
+  onChangeFilterText(newUsersList, newCount) {
     this.setState({
-      filterText: newFilterText,
+      users: newUsersList,
+      // filterText: newFilterText,
+      nameIncludesCount: newCount,
     });
   }
 
   render() {
-    let nameIncludesCount = null;
-    const inputText = this.state.filterText;
-    let usersList = {};
-    if (inputText !== '') {
-      usersList = this.state.users.filter(user =>
-        inputText.toLowerCase().includes(user.name.toLowerCase()),
-      );
-      nameIncludesCount = usersList.length;
-    } else {
-      usersList = this.state.users;
-    }
+    // let nameIncludesCount = null;
+    // const inputText = this.state.filterText;
+    // let usersList = {};
+    // if (inputText !== '') {
+    //   usersList = this.state.users.filter(user =>
+    //     inputText.toLowerCase().includes(user.name.toLowerCase()),
+    //   );
+    //   nameIncludesCount = usersList.length;
+    // } else {
+    //   usersList = this.state.users;
+    // }
+
     return (
       <div>
         <Filter
           onChange={this.onChangeFilterText.bind(this)}
-          filterText={this.state.filterText}
-          count={nameIncludesCount || 0}
+          filterText={this.props.users}
+          count={this.state.nameIncludesCount || 0}
         />
         <ul className="users">
-          {usersList.map(user => (
+          {this.state.users.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>
