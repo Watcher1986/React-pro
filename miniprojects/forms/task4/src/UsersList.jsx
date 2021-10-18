@@ -7,7 +7,7 @@ class UsersList extends Component {
     super(props);
     this.state = {
       //users: this.props.users,
-      filterText: 'some text',
+      filterText: '',
       //nameIncludesCount: null,
     };
   }
