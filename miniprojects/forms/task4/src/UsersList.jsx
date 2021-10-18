@@ -8,37 +8,50 @@ class UsersList extends Component {
     this.state = {
       //users: this.props.users,
       filterText: '',
-      //nameIncludesCount: null,
+      filteredUsers: null,
+
+      nameIncludesCount: null,
     };
   }
 
   onChangeFilterText = newFilterText => {
+    let usersCount = null;
+    let newUsersList = {};
+    if (newFilterText !== '') {
+      newUsersList = this.props.users.filter(user =>
+        newFilterText.toLowerCase().includes(user.name.toLowerCase()),
+      );
+      usersCount = newUsersList.length;
+    } else {
+      newUsersList = this.props.users;
+    }
     this.setState({
-      // users: newUsersList,
+      filteredUsers: newUsersList,
       filterText: newFilterText,
-      // nameIncludesCount: newCount,
+      nameIncludesCount: usersCount,
     });
   };
 
   render() {
-    let nameIncludesCount = null;
-    const inputText = this.state.filterText;
-    let usersList = {};
-    if (inputText !== '') {
-      usersList = this.props.users.filter(user =>
-        inputText.toLowerCase().includes(user.name.toLowerCase()),
-      );
-      nameIncludesCount = usersList.length;
-    } else {
-      usersList = this.props.users;
-    }
+    // let nameIncludesCount = null;
+    // const inputText = this.state.filterText;
+    // let usersList = {};
+    // if (inputText !== '') {
+    //   usersList = this.props.users.filter(user =>
+    //     inputText.toLowerCase().includes(user.name.toLowerCase()),
+    //   );s
+    //   nameIncludesCount = usersList.length;
+    // } else {
+    //   usersList = this.props.users;
+    // }
+    const usersList = this.state.filterText === '' ? this.props.users : this.state.filteredUsers;
 
     return (
       <div>
         <Filter
           onChange={this.onChangeFilterText}
           filterText={this.state.filterText}
-          count={nameIncludesCount || 0}
+          count={this.state.nameIncludesCount || 0}
         />
         <ul className="users">
           {usersList.map(user => (
