@@ -4,7 +4,7 @@ class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: '',
+      inputValue: this.props.filterText,
     };
   }
 
@@ -17,23 +17,23 @@ class Filter extends Component {
   // } else {
   //   usersList = this.state.users;
   // }
-  onInputChange(e) {
+  onInputChange = e => {
     this.setState({
       inputValue: e.target.value,
     });
-    let newCount = null;
-    const inpValue = e.target.value;
-    let usersList = {};
-    const users = this.props.filterText;
-    console.log(users);
-    if (inpValue !== '') {
-      usersList = users.filter(user => inpValue.toLowerCase().includes(user.name.toLowerCase()));
-      newCount = usersList.length;
-    } else {
-      usersList = users;
-    }
-    this.props.onChange(usersList, newCount);
-  }
+    // let newCount = null;
+    // const inpValue = e.target.value;
+    // let usersList = {};
+    // const users = this.props.filterText;
+    // console.log(users);
+    // if (inpValue !== '') {
+    //   usersList = users.filter(user => inpValue.toLowerCase().includes(user.name.toLowerCase()));
+    //   newCount = usersList.length;
+    // } else {
+    //   usersList = users;
+    // }
+    this.props.onChange(e.target.value);
+  };
 
   render() {
     return (
@@ -43,7 +43,7 @@ class Filter extends Component {
           type="text"
           className="filter__input"
           value={this.state.inputValue}
-          onChange={this.onInputChange.bind(this)}
+          onChange={this.onInputChange}
         />
       </div>
     );
