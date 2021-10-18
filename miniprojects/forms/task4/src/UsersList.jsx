@@ -14,7 +14,8 @@ class UsersList extends Component {
     };
   }
 
-  onChangeFilterText = newFilterText => {
+  onChangeFilterText = e => {
+    let newFilterText = e.target.value;
     let usersCount = null;
     let newUsersList = {};
     if (newFilterText !== '') {
