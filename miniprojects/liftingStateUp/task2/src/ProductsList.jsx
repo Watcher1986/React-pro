@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ProductsList extends Component {
-  render() {
-    const total = this.props.cartItems.reduce((acc, item) => acc + item.price, 0);
+const ProductsList = ({cartItems}) => {
+  
+    const total = cartItems.reduce((acc, item) => acc + item.price, 0);
     return (
       <div className="products">
         <ul className="products__list">
-          {this.props.cartItems.map(({ id, name, price }) => (
+          {cartItems.map(({ id, name, price }) => (
             <li key={id} className="products__list-item">
               <span className="products__item-item">{name}</span>
               <span className="products__item-price">${price}</span>
@@ -17,6 +17,6 @@ class ProductsList extends Component {
       </div>
     );
   }
-}
+
 
 export default ProductsList;

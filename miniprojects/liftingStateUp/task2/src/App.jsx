@@ -18,7 +18,6 @@ class Page extends Component {
         [name]: value,
       },
     });
-    console.log(name, value);
   };
 
   render() {
