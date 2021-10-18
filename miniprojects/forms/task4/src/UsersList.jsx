@@ -39,7 +39,7 @@ class UsersList extends Component {
     // if (inputText !== '') {
     //   usersList = this.props.users.filter(user =>
     //     inputText.toLowerCase().includes(user.name.toLowerCase()),
-    //   );s
+    //   );
     //   nameIncludesCount = usersList.length;
     // } else {
     //   usersList = this.props.users;

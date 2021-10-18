@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      inputValue: this.props.filterText,
-    };
+    // this.state = {
+    //   inputValue: this.props.filterText,
+    // };
   }
 
   // let usersList = {};
@@ -42,8 +42,8 @@ class Filter extends Component {
         <input
           type="text"
           className="filter__input"
-          value={this.state.inputValue}
-          onChange={this.onInputChange}
+          value={this.props.filterText}
+          onChange={e => this.props.onChange(e.target.value)}
         />
       </div>
     );
