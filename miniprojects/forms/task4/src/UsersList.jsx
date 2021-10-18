@@ -7,35 +7,39 @@ class UsersList extends Component {
     super(props);
     this.state = {
       filterText: '',
-      // filteredUsers: this.props.users,
-      // namesIncludesCount: null,
+      //filteredUsers: this.props.users || ,
+      //namesIncludesCount: null,
     };
   }
 
   onChangeFilterText = e => {
     // let newFilterText = e.target.value;
     // let usersCount = null;
-    // const newUsersList = this.props.users.filter(({ name }) =>
+    // const usersToDisplay = this.props.users.filter(({ name }) =>
     //   name.toLowerCase().includes(this.state.filterText),
     // );
-    // usersCount = newUsersList.length;
+    // usersCount = usersToDisplay.length;
 
     this.setState({
-      // filteredUsers: newUsersList,
+      // filteredUsers: usersToDisplay,
       filterText: e.target.value,
       // namesIncludesCount: usersCount,
     });
   };
 
   render() {
-    const newUsersList = this.props.users.filter(user =>
-      this.state.filterText.toLowerCase().includes(user.name.toLowerCase()),
+    const usersToDisplay = this.props.users.filter(({ name }) =>
+      name.toLowerCase().includes(this.state.filterText),
     );
-    const usersList = this.state.filterText === '' ? this.props.users : newUsersList;
-    // const newUsersList = this.props.users.filter(user =>
+    // const usersToDisplay = this.props.users.filter(user =>
     //   this.state.filterText.toLowerCase().includes(user.name.toLowerCase()),
     // );
-    const namesCount = newUsersList.length;
+    // const usersList = this.state.filterText === '' ? this.props.users : usersToDisplay;
+    // const usersToDisplay = this.props.users.filter(user =>
+    //   this.state.filterText.toLowerCase().includes(user.name.toLowerCase()),
+    // );
+    console.log(usersToDisplay);
+    const namesCount = usersToDisplay.length;
     return (
       <div>
         <Filter
@@ -44,7 +48,7 @@ class UsersList extends Component {
           count={namesCount || 0}
         />
         <ul className="users">
-          {usersList.map(user => (
+          {usersToDisplay.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>
