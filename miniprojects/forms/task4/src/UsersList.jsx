@@ -6,11 +6,9 @@ class UsersList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //users: this.props.users,
       filterText: '',
       filteredUsers: null,
-
-      nameIncludesCount: null,
+      namesIncludesCount: null,
     };
   }
 
@@ -29,22 +27,11 @@ class UsersList extends Component {
     this.setState({
       filteredUsers: newUsersList,
       filterText: newFilterText,
-      nameIncludesCount: usersCount,
+      namesIncludesCount: usersCount,
     });
   };
 
   render() {
-    // let nameIncludesCount = null;
-    // const inputText = this.state.filterText;
-    // let usersList = {};
-    // if (inputText !== '') {
-    //   usersList = this.props.users.filter(user =>
-    //     inputText.toLowerCase().includes(user.name.toLowerCase()),
-    //   );
-    //   nameIncludesCount = usersList.length;
-    // } else {
-    //   usersList = this.props.users;
-    // }
     const usersList = this.state.filterText === '' ? this.props.users : this.state.filteredUsers;
 
     return (
@@ -52,7 +39,7 @@ class UsersList extends Component {
         <Filter
           onChange={this.onChangeFilterText}
           filterText={this.state.filterText}
-          count={this.state.nameIncludesCount || 0}
+          count={this.state.namesIncludesCount || 0}
         />
         <ul className="users">
           {usersList.map(user => (
