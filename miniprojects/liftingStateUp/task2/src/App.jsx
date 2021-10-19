@@ -6,7 +6,7 @@ class Page extends Component {
   state = {
     userData: {
       firstName: 'John',
-      lastName: 'Form',
+      lastName: 'Doe',
     },
   };
 
