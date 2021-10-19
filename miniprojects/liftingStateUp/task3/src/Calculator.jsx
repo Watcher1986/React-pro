@@ -40,7 +40,7 @@ class Calculator extends Component {
         scale="f"
         temperature={fahrenheit}
         onTemperatureChange={this.handleFahrenheitChange} />
-        <BoilingVerdict celsius={parseFloat(celsius)} />
+       {temperature &&  <BoilingVerdict celsius={parseFloat(celsius)} />}
       </div>
     );
   }
