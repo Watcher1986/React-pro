@@ -8,25 +8,24 @@ class App extends Component {
     number: 0,
   };
 
-  // componentDidMount() {
-  //   this.intervalId = setInterval(() => {
-  //     this.setState({
-  //       number: this.state.number + 1,
-  //     });
-  //   }, 1000);
-  // }
+  componentDidMount() {
+    this.intervalId = setInterval(() => {
+      this.setState({
+        number: this.state.number + 1,
+      });
+    }, 1000);
+  }
 
-  // componentWillUnmount() {
-  //   clearInterval(this.intervalId);
-  // }
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
 
   render() {
     return (
       <div className="app">
-        {/* <EvenNumbers title="Even numbers" number={this.state.number} />
+        <EvenNumbers title="Even number." number={this.state.number} />
         <Numbers title="All numbers" number={this.state.number} />
-        <OddNumbers title="Odd numbers" number={this.state.number} /> */}
-        <Numbers title="Random number" number={17} />
+        <OddNumbers title="Odd number." number={this.state.number} />
       </div>
     );
   }
